@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ChurchFlowAI.Api/ChurchFlowAI.Api.csproj" />
+  <Project Path="ChurchFlowAI.Application/ChurchFlowAI.Application.csproj" />
+  <Project Path="ChurchFlowAI.Domain/ChurchFlowAI.Domain.csproj" />
+  <Project Path="ChurchFlowAI.Infrastructure/ChurchFlowAI.Infrastructure.csproj" />
+</Solution>
