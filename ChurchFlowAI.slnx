@@ -1,6 +1,11 @@
 <Solution>
-  <Project Path="ChurchFlowAI.Api/ChurchFlowAI.Api.csproj" />
-  <Project Path="ChurchFlowAI.Application/ChurchFlowAI.Application.csproj" />
-  <Project Path="ChurchFlowAI.Domain/ChurchFlowAI.Domain.csproj" />
-  <Project Path="ChurchFlowAI.Infrastructure/ChurchFlowAI.Infrastructure.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/ChurchFlow.Api/ChurchFlow.Api.csproj" />
+    <Project Path="src/ChurchFlow.Application/ChurchFlow.Application.csproj" />
+    <Project Path="src/ChurchFlow.Domain/ChurchFlow.Domain.csproj" />
+    <Project Path="src/ChurchFlow.Infrastructure/ChurchFlow.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ChurchFlow.Tests/ChurchFlow.Tests.csproj" />
+  </Folder>
 </Solution>

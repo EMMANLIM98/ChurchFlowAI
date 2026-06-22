@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "OFueLZ56Bak=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Emman Lim\\Documents\\Projects\\ChurchFlowAI\\src\\ChurchFlow.Api\\ChurchFlow.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Emman Lim\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.0\\microsoft.aspnetcore.openapi.10.0.0.nupkg.sha512",
+    "C:\\Users\\Emman Lim\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
