@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "ChurchFlow.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "ChurchFlow.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ChurchFlow.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ChurchFlow.Application.dll": {}
+        }
+      },
+      "ChurchFlow.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/ChurchFlow.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ChurchFlow.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ChurchFlow.Application/1.0.0": {
+      "type": "project",
+      "path": "../ChurchFlow.Application/ChurchFlow.Application.csproj",
+      "msbuildProject": "../ChurchFlow.Application/ChurchFlow.Application.csproj"
+    },
+    "ChurchFlow.Domain/1.0.0": {
+      "type": "project",
+      "path": "../ChurchFlow.Domain/ChurchFlow.Domain.csproj",
+      "msbuildProject": "../ChurchFlow.Domain/ChurchFlow.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "ChurchFlow.Application >= 1.0.0",
+      "ChurchFlow.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Emman Lim\\.nuget\\packages\\": {}
@@ -31,7 +69,14 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Emman Lim\\Documents\\Projects\\ChurchFlowAI\\src\\ChurchFlow.Application\\ChurchFlow.Application.csproj": {
+              "projectPath": "C:\\Users\\Emman Lim\\Documents\\Projects\\ChurchFlowAI\\src\\ChurchFlow.Application\\ChurchFlow.Application.csproj"
+            },
+            "C:\\Users\\Emman Lim\\Documents\\Projects\\ChurchFlowAI\\src\\ChurchFlow.Domain\\ChurchFlow.Domain.csproj": {
+              "projectPath": "C:\\Users\\Emman Lim\\Documents\\Projects\\ChurchFlowAI\\src\\ChurchFlow.Domain\\ChurchFlow.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

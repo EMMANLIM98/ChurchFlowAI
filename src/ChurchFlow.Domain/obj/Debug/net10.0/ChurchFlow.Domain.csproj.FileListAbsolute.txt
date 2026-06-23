@@ -1,0 +1,12 @@
+C:\Users\Emman Lim\Documents\Projects\ChurchFlowAI\src\ChurchFlow.Domain\bin\Debug\net10.0\ChurchFlow.Domain.deps.json
+C:\Users\Emman Lim\Documents\Projects\ChurchFlowAI\src\ChurchFlow.Domain\bin\Debug\net10.0\ChurchFlow.Domain.dll
+C:\Users\Emman Lim\Documents\Projects\ChurchFlowAI\src\ChurchFlow.Domain\bin\Debug\net10.0\ChurchFlow.Domain.pdb
+C:\Users\Emman Lim\Documents\Projects\ChurchFlowAI\src\ChurchFlow.Domain\obj\Debug\net10.0\ChurchFlow.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Emman Lim\Documents\Projects\ChurchFlowAI\src\ChurchFlow.Domain\obj\Debug\net10.0\ChurchFlow.Domain.AssemblyInfoInputs.cache
+C:\Users\Emman Lim\Documents\Projects\ChurchFlowAI\src\ChurchFlow.Domain\obj\Debug\net10.0\ChurchFlow.Domain.AssemblyInfo.cs
+C:\Users\Emman Lim\Documents\Projects\ChurchFlowAI\src\ChurchFlow.Domain\obj\Debug\net10.0\ChurchFlow.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Emman Lim\Documents\Projects\ChurchFlowAI\src\ChurchFlow.Domain\obj\Debug\net10.0\ChurchFlow.Domain.sourcelink.json
+C:\Users\Emman Lim\Documents\Projects\ChurchFlowAI\src\ChurchFlow.Domain\obj\Debug\net10.0\ChurchFlow.Domain.dll
+C:\Users\Emman Lim\Documents\Projects\ChurchFlowAI\src\ChurchFlow.Domain\obj\Debug\net10.0\refint\ChurchFlow.Domain.dll
+C:\Users\Emman Lim\Documents\Projects\ChurchFlowAI\src\ChurchFlow.Domain\obj\Debug\net10.0\ChurchFlow.Domain.pdb
+C:\Users\Emman Lim\Documents\Projects\ChurchFlowAI\src\ChurchFlow.Domain\obj\Debug\net10.0\ref\ChurchFlow.Domain.dll
