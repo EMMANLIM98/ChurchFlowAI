@@ -1,13 +1,13 @@
 namespace ChurchFlow.Domain.Entities;
 
-public class Member
+public class Member : BaseEntity
 {
     public Guid Id { get; private set; }
 
     public string FirstName { get; private set; }
     public string LastName { get; private set; }
 
-    public string Email { get; private set; }
+    public Email Email { get; private set; }
 
     public DateTime DateOfBirth { get; private set; }
 
@@ -15,7 +15,23 @@ public class Member
 
     public bool IsActive { get; private set; }
 
-    private Member() { } // For EF Core
+    public Member(
+    string firstName,
+    string lastName,
+    string email,
+    DateTime dateOfBirth)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+
+        Email = Email.Create(email);
+
+        DateOfBirth = dateOfBirth;
+
+        Id = Guid.NewGuid();
+        CreatedAt = DateTime.UtcNow;
+        IsActive = true;
+    }
 
     public Member(string firstName, string lastName, string email, DateTime dateOfBirth)
     {
@@ -51,11 +67,16 @@ public class Member
         if (string.IsNullOrWhiteSpace(email))
             throw new ArgumentException("Email cannot be empty");
 
-        Email = email.ToLowerInvariant();
+        Email = Email.Create(email);
     }
 
     public string GetFullName()
     {
         return $"{FirstName} {LastName}";
+    }
+
+    public void Deactivate()
+    {
+        IsActive = false;
     }
 }

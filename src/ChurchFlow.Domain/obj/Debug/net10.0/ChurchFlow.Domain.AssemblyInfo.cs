@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChurchFlow.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+831396257511e189ed0cb6527e89674ed24ecda5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc113b22fd4c5275691a3cf39c602d6aed48f49b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChurchFlow.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChurchFlow.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
