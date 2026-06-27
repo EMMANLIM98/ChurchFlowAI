@@ -1,10 +1,18 @@
+using ChurchFlow.Api;
+using ChurchFlow.Application.Abstractions;
+using ChurchFlow.Application.Members.CreateMember;
+using ChurchFlow.Application.Members.GetMembers;
+using ChurchFlow.Infrastructure.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddControllers();
 builder.Services.AddScoped<CreateMemberHandler>();
-builder.Services.AddScoped<IMemberRepository, MemberRepository>();
+builder.Services.AddScoped<GetMembersHandler>();
+builder.Services.AddSingleton<IMemberRepository, InMemoryMemberRepository>();
 
 
 builder.Services.AddHttpContextAccessor();
@@ -18,6 +26,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.MapControllers();
 
 var summaries = new[]
 {

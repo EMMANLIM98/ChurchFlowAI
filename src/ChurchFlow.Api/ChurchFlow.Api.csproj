@@ -9,10 +9,15 @@
   <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.9">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ChurchFlow.Application\ChurchFlow.Application.csproj" />
+    <ProjectReference Include="..\ChurchFlow.Infrastructure\ChurchFlow.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
