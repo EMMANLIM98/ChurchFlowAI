@@ -1,4 +1,5 @@
 using ChurchFlow.Application.Abstractions;
+using ChurchFlow.Application.Common;
 using ChurchFlow.Domain.Entities;
 
 namespace ChurchFlow.Application.Members.CreateMember;
@@ -16,10 +17,10 @@ public class CreateMemberHandler
         _currentTenant = currentTenant;
     }
 
-    public async Task<Result> Handle(CreateMemberCommand request)
+    public async Task<Result> Handle(CreateMemberCommand request, CancellationToken cancellationToken = default)
     {
         var existing = await _memberRepository
-            .GetByEmailAsync(request.Email);
+            .GetByEmailAsync(_currentTenant.TenantId, request.Email, cancellationToken);
 
         if (existing != null)
             return Result.Failure("Member already exists.");
@@ -32,7 +33,7 @@ public class CreateMemberHandler
             _currentTenant.TenantId
         );
 
-        await _memberRepository.AddAsync(member);
+        await _memberRepository.AddAsync(member, cancellationToken);
 
         return Result.Success();
     }

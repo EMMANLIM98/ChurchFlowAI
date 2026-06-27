@@ -1,9 +1,10 @@
+using ChurchFlow.Domain.Common;
+using ChurchFlow.Domain.ValueObjects;
+
 namespace ChurchFlow.Domain.Entities;
 
 public class Member : BaseEntity
 {
-    public Guid Id { get; private set; }
-
     public string FirstName { get; private set; }
     public string LastName { get; private set; }
 
@@ -11,46 +12,29 @@ public class Member : BaseEntity
 
     public DateTime DateOfBirth { get; private set; }
 
-    public DateTime CreatedAt { get; private set; }
-
     public bool IsActive { get; private set; }
 
     public Member(
-    string firstName,
-    string lastName,
-    string email,
-    DateTime dateOfBirth)
-    {
-        FirstName = firstName;
-        LastName = lastName;
-
-        Email = Email.Create(email);
-
-        DateOfBirth = dateOfBirth;
-
-        Id = Guid.NewGuid();
-        CreatedAt = DateTime.UtcNow;
-        IsActive = true;
-    }
-
-    public Member(string firstName, string lastName, string email, DateTime dateOfBirth)
+        string firstName,
+        string lastName,
+        string email,
+        DateTime dateOfBirth,
+        Guid tenantId)
     {
         if (string.IsNullOrWhiteSpace(firstName))
-            throw new ArgumentException("First name is required");
+            throw new ArgumentException("First name is required.", nameof(firstName));
 
         if (string.IsNullOrWhiteSpace(lastName))
-            throw new ArgumentException("Last name is required");
-
-        if (string.IsNullOrWhiteSpace(email))
-            throw new ArgumentException("Email is required");
+            throw new ArgumentException("Last name is required.", nameof(lastName));
 
         if (dateOfBirth > DateTime.UtcNow)
-            throw new ArgumentException("Invalid date of birth");
+            throw new ArgumentException("Invalid date of birth.", nameof(dateOfBirth));
 
         Id = Guid.NewGuid();
-        FirstName = firstName;
-        LastName = lastName;
-        Email = email.ToLowerInvariant();
+        TenantId = tenantId;
+        FirstName = firstName.Trim();
+        LastName = lastName.Trim();
+        Email = Email.Create(email);
         DateOfBirth = dateOfBirth;
 
         CreatedAt = DateTime.UtcNow;
@@ -64,19 +48,12 @@ public class Member : BaseEntity
 
     public void UpdateEmail(string email)
     {
-        if (string.IsNullOrWhiteSpace(email))
-            throw new ArgumentException("Email cannot be empty");
-
         Email = Email.Create(email);
+        UpdatedAt = DateTime.UtcNow;
     }
 
     public string GetFullName()
     {
         return $"{FirstName} {LastName}";
-    }
-
-    public void Deactivate()
-    {
-        IsActive = false;
     }
 }

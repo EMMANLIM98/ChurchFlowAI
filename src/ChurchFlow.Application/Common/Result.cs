@@ -1,6 +1,6 @@
 namespace ChurchFlow.Application.Common;
 
-public class Result<T>
+public class Result
 {
     public bool IsSuccess { get; }
 
@@ -8,7 +8,7 @@ public class Result<T>
 
     public bool IsFailure => !IsSuccess;
 
-    private Result(bool isSuccess, string error)
+    protected Result(bool isSuccess, string error)
     {
         IsSuccess = isSuccess;
         Error = error;
@@ -19,4 +19,26 @@ public class Result<T>
 
     public static Result Failure(string error)
         => new Result(false, error);
+}
+
+public class Result<T> : Result
+{
+    public T? Value { get; }
+
+    private Result(T value)
+        : base(true, string.Empty)
+    {
+        Value = value;
+    }
+
+    private Result(string error)
+        : base(false, error)
+    {
+    }
+
+    public static Result<T> Success(T value)
+        => new Result<T>(value);
+
+    public new static Result<T> Failure(string error)
+        => new Result<T>(error);
 }
